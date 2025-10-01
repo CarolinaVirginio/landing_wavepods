@@ -5,15 +5,14 @@ import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import { Headphones } from "lucide-react";
 
+const links = [
+  { label: "Login", href: "/login" },
+  { label: "Cadastro", href: "/cadastro" },
+];
 const Header = () => {
-  const links = [
-    { label: "Login", href: "/login" },
-    { label: "Cadastro", href: "/cadastro" },
-  ];
-
   return (
     <AppBar
-      position="absolute"
+      position="fixed"
       elevation={0}
       sx={{
         background: "rgba(10, 10, 10, 0.9)",

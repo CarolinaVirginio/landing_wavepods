@@ -12,7 +12,6 @@ const ContentMain = () => {
         background: `url(${Wavebg}) center/cover no-repeat`,
         display: "flex",
         alignItems: "center",
-        justifyContent: "flex-start",
       }}
     >
       {/* Overlay */}
@@ -26,20 +25,21 @@ const ContentMain = () => {
       />
 
       <Container
+        disableGutters
         sx={{
           zIndex: 2,
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-
-          maxWidth: { xs: "90%", md: "1200px" },
-          px: { xs: 2, md: 3 },
+          pl: { xs: 3, md: 10 },
+          pr: { xs: 2, md: 0 },
+          ml: 2,
+          pt: 10,
         }}
       >
         <Box
           sx={{
             maxWidth: { xs: "100%", md: "600px" },
-            textAlign: "left",
           }}
         >
           <Typography
@@ -47,20 +47,23 @@ const ContentMain = () => {
             sx={{
               color: "#fff",
               fontWeight: 800,
-              fontSize: { xs: "2.2rem", md: "3.2rem" },
-              mb: 2,
-              lineHeight: 1.2,
+              fontSize: { xs: "2.5rem", md: "3.5rem", lg: "4rem" },
+              lineHeight: 1.1,
+              letterSpacing: "0.03em",
+              mb: 3,
             }}
           >
-            Experimente o futuro do som
+            Experimente o<br />
+            futuro do som
           </Typography>
 
           <Typography
             variant="h5"
             sx={{
-              color: "rgba(255,255,255,0.85)",
+              color: "rgba(255,255,255,0.9)",
               fontWeight: 400,
-              mb: 2,
+              fontSize: { xs: "1.2rem", md: "1.5rem" },
+              mb: 2.5,
             }}
           >
             Tecnologia premium com conforto absoluto
@@ -71,8 +74,10 @@ const ContentMain = () => {
             sx={{
               color: "rgba(255,255,255,0.7)",
               fontSize: "1rem",
-              mb: 4,
-              letterSpacing: "0.03em",
+              lineHeight: 1.6,
+              letterSpacing: "0.3px",
+              maxWidth: "500px",
+              mb: 5,
             }}
           >
             Cancelamento ativo de ruído de 40 dB | Áudio de alta fidelidade |
