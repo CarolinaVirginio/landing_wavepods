@@ -1,7 +1,11 @@
 import { Box, Typography, Container } from "@mui/material";
+import { motion } from "framer-motion";
 import premiumSound from "../img/premiumSound.jpg";
 import headphoneDetail from "../img/headphoneDetail.jpg";
 import blueDetail from "../img/blueDetail.jpg";
+
+const MotionBox = motion(Box);
+
 const motivationsData = [
   {
     id: "motivation-1",
@@ -22,8 +26,16 @@ const motivationsData = [
     img: blueDetail,
   },
 ];
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const viewportOptions = { once: true, amount: 0.1 };
+
 const MotivationItem = ({ title, text, img, reverse }) => (
-  <Container
+  <Box
     component="section"
     sx={{
       display: "flex",
@@ -32,10 +44,16 @@ const MotivationItem = ({ title, text, img, reverse }) => (
       flexDirection: { xs: "column", md: reverse ? "row-reverse" : "row" },
       py: { xs: 6, md: 10 },
       gap: 4,
-      maxWidth: 1200,
     }}
   >
-    <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" } }}>
+    <MotionBox
+      flex={1}
+      variants={itemVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOptions}
+      sx={{ textAlign: { xs: "center", md: "left" } }}
+    >
       <Typography
         variant="h3"
         sx={{
@@ -52,20 +70,22 @@ const MotivationItem = ({ title, text, img, reverse }) => (
         sx={{
           fontSize: { xs: "1rem", md: "1.2rem" },
           lineHeight: 1.6,
-          color: "#aeacacff",
+          color: "rgb(167, 171, 174)",
         }}
       >
         {text}
       </Typography>
-    </Box>
+    </MotionBox>
 
-    <Box
-      sx={{
-        flex: 1,
-        display: "flex",
-        justifyContent: "center",
-        mt: { xs: 3, md: 0 },
-      }}
+    <MotionBox
+      flex={1}
+      display="flex"
+      justifyContent="center"
+      mt={{ xs: 3, md: 0 }}
+      variants={itemVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOptions}
     >
       <Box
         component="img"
@@ -75,17 +95,19 @@ const MotivationItem = ({ title, text, img, reverse }) => (
           width: "100%",
           maxWidth: 500,
           borderRadius: 2,
-          boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+          boxShadow: "0 8px 25px rgba(0,0,0,0.25)",
         }}
       />
-    </Box>
-  </Container>
+    </MotionBox>
+  </Box>
 );
+
 const Motivation = () => (
-  <>
+  <Container maxWidth="lg">
     {motivationsData.map((item, index) => (
       <MotivationItem key={item.id} {...item} reverse={index % 2 !== 0} />
     ))}
-  </>
+  </Container>
 );
+
 export default Motivation;
