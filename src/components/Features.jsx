@@ -43,7 +43,7 @@ const FeatureItem = ({ icon, title, description, ariaLabel }) => (
       color: "#e4dedeff",
       borderRadius: 2,
       p: 3,
-      maxWidth: "280px",
+      maxWidth: 280,
       boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
       transition: "transform 0.2s ease",
       "&:hover": {

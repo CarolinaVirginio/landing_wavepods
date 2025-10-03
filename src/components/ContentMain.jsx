@@ -39,7 +39,7 @@ const ContentMain = () => {
       >
         <Box
           sx={{
-            maxWidth: { xs: "100%", md: "600px" },
+            maxWidth: { xs: 1, md: 600 },
           }}
         >
           <Typography
@@ -60,7 +60,7 @@ const ContentMain = () => {
           <Typography
             variant="h5"
             sx={{
-              color: "rgba(255,255,255,0.9)",
+              color: "#e4dedeff",
               fontWeight: 400,
               fontSize: { xs: "1.2rem", md: "1.5rem" },
               mb: 2.5,
@@ -72,11 +72,11 @@ const ContentMain = () => {
           <Typography
             variant="body1"
             sx={{
-              color: "rgba(255,255,255,0.7)",
+              color: "#e4dedeff",
               fontSize: "1rem",
               lineHeight: 1.6,
               letterSpacing: "0.02rem",
-              maxWidth: "500px",
+              maxWidth: 500,
               mb: 5,
             }}
           >

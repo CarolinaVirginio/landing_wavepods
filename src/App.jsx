@@ -2,6 +2,7 @@ import "./App.css";
 import ContentMain from "./components/ContentMain";
 import Features from "./components/Features";
 import Header from "./components/Header";
+import Motivation from "./components/Motivation";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <ContentMain />
       <Features />
+      <Motivation />
     </div>
   );
 }
