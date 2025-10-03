@@ -1,5 +1,5 @@
 import { Box, Typography, Button, Container } from "@mui/material";
-import Wavebg from "../img/wavebg.jpg";
+import waveBg from "../img/wavebg.jpg";
 
 const ContentMain = () => {
   return (
@@ -9,7 +9,7 @@ const ContentMain = () => {
       sx={{
         position: "relative",
         minHeight: "100vh",
-        background: `url(${Wavebg}) center/cover no-repeat`,
+        background: `url(${waveBg}) center/cover no-repeat`,
         display: "flex",
         alignItems: "center",
       }}
@@ -49,7 +49,7 @@ const ContentMain = () => {
               fontWeight: 800,
               fontSize: { xs: "2.5rem", md: "3.5rem", lg: "4rem" },
               lineHeight: 1.1,
-              letterSpacing: "0.03em",
+              letterSpacing: "0.03rem",
               mb: 3,
             }}
           >
@@ -75,7 +75,7 @@ const ContentMain = () => {
               color: "rgba(255,255,255,0.7)",
               fontSize: "1rem",
               lineHeight: 1.6,
-              letterSpacing: "0.3px",
+              letterSpacing: "0.02rem",
               maxWidth: "500px",
               mb: 5,
             }}
@@ -98,7 +98,7 @@ const ContentMain = () => {
                 px: 2,
                 py: 1.5,
                 fontWeight: 600,
-                borderRadius: "50px",
+                borderRadius: 50,
                 background: "linear-gradient(90deg, #00bfff, #1e90ff)",
                 textTransform: "none",
                 boxShadow: "0 0 15px rgba(30, 144, 255, 0.6)",
@@ -119,7 +119,7 @@ const ContentMain = () => {
                 color: "#00c6ff",
                 background: "transparent",
                 border: "2px solid #00c6ff",
-                borderRadius: "50px",
+                borderRadius: 50,
                 px: 2,
                 py: 1.5,
                 fontWeight: 600,

@@ -36,7 +36,7 @@ const Header = () => {
             variant="h5"
             sx={{
               color: "#fff",
-              letterSpacing: "0.08em",
+              letterSpacing: "0.08rem",
               fontWeight: 700,
             }}
           >
@@ -54,7 +54,7 @@ const Header = () => {
                 color: "#fff",
                 mr: 3,
                 fontWeight: 500,
-                letterSpacing: "0.05em",
+                letterSpacing: "0.05rem",
                 transition: "color 0.3s",
                 "&:hover": {
                   color: "#00bfff",
@@ -73,7 +73,7 @@ const Header = () => {
             px: 2,
             py: 1.5,
             fontWeight: 600,
-            borderRadius: "50px",
+            borderRadius: 50,
             boxShadow: "0 0 15px rgba(30, 144, 255, 0.6)",
             transition: "all 0.3s ease",
             "&:hover": {

@@ -55,7 +55,7 @@ const FeatureItem = ({ icon, title, description, ariaLabel }) => (
     <Box
       sx={{
         backgroundColor: "#000",
-        borderRadius: "50%",
+        borderRadius: 50,
         width: 40,
         height: 40,
         display: "flex",
