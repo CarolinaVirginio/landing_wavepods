@@ -1,4 +1,5 @@
 import "./App.css";
+import BuySection from "./components/BuySection";
 import ContentMain from "./components/ContentMain";
 import Features from "./components/Features";
 import Header from "./components/Header";
@@ -11,6 +12,7 @@ function App() {
       <ContentMain />
       <Features />
       <Motivation />
+      <BuySection />
     </div>
   );
 }

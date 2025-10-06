@@ -70,7 +70,7 @@ const MotivationItem = ({ title, text, img, reverse }) => (
         sx={{
           fontSize: { xs: "1rem", md: "1.2rem" },
           lineHeight: 1.6,
-          color: "rgb(167, 171, 174)",
+          color: "#bfb8b8",
         }}
       >
         {text}
