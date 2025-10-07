@@ -100,7 +100,7 @@ const ContentMain = () => {
                 fontWeight: 600,
                 borderRadius: 50,
                 background: "linear-gradient(90deg, #00bfff, #1e90ff)",
-                textTransform: "none",
+                textTransform: "uppercase",
                 boxShadow: "0 0 15px rgba(30, 144, 255, 0.6)",
                 transition: "all 0.3s ease",
                 "&:hover": {
@@ -117,14 +117,13 @@ const ContentMain = () => {
               href="#features"
               sx={{
                 color: "#00c6ff",
-                background: "transparent",
                 border: "2px solid #00c6ff",
                 borderRadius: 50,
                 px: 2,
                 py: 1.5,
                 fontWeight: 600,
                 fontSize: "0.95rem",
-                textTransform: "none",
+                textTransform: "uppercase",
                 transition: "all 0.3s ease",
                 "&:hover": {
                   color: "#00c6ff",
