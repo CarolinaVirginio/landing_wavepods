@@ -4,6 +4,7 @@ import ContentMain from "./components/ContentMain";
 import Features from "./components/Features";
 import Header from "./components/Header";
 import Motivation from "./components/Motivation";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Features />
       <Motivation />
       <BuySection />
+      <Footer />
     </div>
   );
 }
