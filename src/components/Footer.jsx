@@ -60,7 +60,7 @@ const Footer = () => {
           alignItems="flex-start"
           justifyContent="space-between"
         >
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography
               variant="h6"
               sx={{
@@ -129,11 +129,11 @@ const Footer = () => {
             )}
           </Grid>
 
-          <Grid item xs={12} md={3}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <FooterColumn title="Links rápidos" items={quickLinks} />
           </Grid>
 
-          <Grid item xs={12} md={3}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <FooterColumn title="Siga-nos" items={socialLinks} />
           </Grid>
         </Grid>
