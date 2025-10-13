@@ -4,7 +4,7 @@ import premiumSound from "../img/premiumSound.jpg";
 import headphoneDetail from "../img/headphoneDetail.jpg";
 import blueDetail from "../img/blueDetail.jpg";
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const motivationsData = [
   {
