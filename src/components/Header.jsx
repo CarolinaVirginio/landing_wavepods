@@ -2,8 +2,8 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { Button } from "@mui/material";
 import { Headphones } from "lucide-react";
+import CustomButton from "./CustomButton";
 
 const links = [
   { label: "Login", href: "/login" },
@@ -66,24 +66,7 @@ const Header = () => {
           ))}
         </nav>
 
-        <Button
-          sx={{
-            color: "#fff",
-            background: "linear-gradient(90deg, #00bfff, #1e90ff)",
-            px: 2,
-            py: 1.5,
-            fontWeight: 600,
-            borderRadius: 50,
-            boxShadow: "0 0 15px rgba(30, 144, 255, 0.6)",
-            transition: "all 0.3s ease",
-            "&:hover": {
-              boxShadow: "0 0 25px rgba(30, 144, 255, 0.9)",
-              transform: "translateY(-2px)",
-            },
-          }}
-        >
-          Comprar
-        </Button>
+        <CustomButton>Comprar</CustomButton>
       </Toolbar>
     </AppBar>
   );

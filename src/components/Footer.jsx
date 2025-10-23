@@ -7,6 +7,7 @@ import {
   Button,
 } from "@mui/material";
 import { useState } from "react";
+import CustomButton from "./CustomButton";
 
 const quickLinks = ["Sobre nós", "Suporte", "Política de privacidade"];
 const socialLinks = ["Instagram", "Facebook", "Twitter"];
@@ -99,27 +100,7 @@ const Footer = () => {
                   "& input": { padding: "10px 16px", borderRadius: "50px" },
                 }}
               />
-              <Button
-                type="submit"
-                sx={{
-                  background: "transparent",
-                  border: "2px solid #00c6ff",
-                  color: "#00c6ff",
-                  borderRadius: 50,
-                  px: 4,
-                  py: 1,
-                  fontWeight: 600,
-                  fontSize: "0.9rem",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
-                  "&:hover": {
-                    color: "#00c6ff",
-                    boxShadow: "0 0 15px rgba(0, 198, 255, 0.6)",
-                  },
-                }}
-              >
-                Inscrever-se
-              </Button>
+              <CustomButton variant="newsletter">Inscrever-se</CustomButton>
             </Box>
 
             {submitted && (

@@ -1,4 +1,5 @@
 import { Box, Typography, Button, Container } from "@mui/material";
+import CustomButton from "./CustomButton";
 
 export default function BuySection() {
   return (
@@ -33,24 +34,7 @@ export default function BuySection() {
           Pronto para transformar sua experiência musical?
         </Typography>
 
-        <Button
-          sx={{
-            color: "#fff",
-            background: "linear-gradient(90deg, #00bfff, #1e90ff)",
-            px: 2.5,
-            py: 1.5,
-            fontWeight: 600,
-            borderRadius: 50,
-            boxShadow: "0 0 15px rgba(30, 144, 255, 0.6)",
-            transition: "all 0.3s ease",
-            "&:hover": {
-              boxShadow: "0 0 25px rgba(30, 144, 255, 0.9)",
-              transform: "translateY(-2px)",
-            },
-          }}
-        >
-          Comprar
-        </Button>
+        <CustomButton>Comprar</CustomButton>
       </Container>
     </Box>
   );

@@ -1,5 +1,6 @@
 import { Box, Typography, Button, Container } from "@mui/material";
 import waveBg from "../img/wavebg.jpg";
+import CustomButton from "./CustomButton";
 
 const ContentMain = () => {
   return (
@@ -91,49 +92,9 @@ const ContentMain = () => {
               flexWrap: "wrap",
             }}
           >
-            <Button
-              href="#comprar"
-              sx={{
-                color: "#fff",
-                px: 2,
-                py: 1.5,
-                fontWeight: 600,
-                borderRadius: 50,
-                background: "linear-gradient(90deg, #00bfff, #1e90ff)",
-                textTransform: "uppercase",
-                boxShadow: "0 0 15px rgba(30, 144, 255, 0.6)",
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  boxShadow: "0 0 25px rgba(30, 144, 255, 0.9)",
-                  transform: "translateY(-2px)",
-                  background: "linear-gradient(90deg, #1e90ff, #00bfff)",
-                },
-              }}
-            >
-              Comprar agora
-            </Button>
+            <CustomButton>Comprar agora</CustomButton>
 
-            <Button
-              href="#features"
-              sx={{
-                color: "#00c6ff",
-                border: "2px solid #00c6ff",
-                borderRadius: 50,
-                px: 2,
-                py: 1.5,
-                fontWeight: 600,
-                fontSize: "0.95rem",
-                textTransform: "uppercase",
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  color: "#00c6ff",
-                  boxShadow: "0 0 15px rgba(0, 198, 255, 0.6)",
-                  transform: "translateY(-2px)",
-                },
-              }}
-            >
-              Ver especificações
-            </Button>
+            <CustomButton variant="outlined">Ver especificações</CustomButton>
           </Box>
         </Box>
       </Container>
