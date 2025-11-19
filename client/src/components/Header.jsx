@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Headphones } from "lucide-react";
 import CustomButton from "./CustomButton";
+import createCheckoutSession from "../api/stripe";
 
 const links = [
   { label: "Login", href: "/login" },
@@ -66,7 +67,7 @@ const Header = () => {
           ))}
         </nav>
 
-        <CustomButton>Comprar</CustomButton>
+        <CustomButton onClick={createCheckoutSession}>Comprar</CustomButton>
       </Toolbar>
     </AppBar>
   );

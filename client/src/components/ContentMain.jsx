@@ -1,6 +1,7 @@
 import { Box, Typography, Button, Container } from "@mui/material";
 import waveBg from "../img/wavebg.jpg";
 import CustomButton from "./CustomButton";
+import createCheckoutSession from "../api/stripe";
 
 const ContentMain = () => {
   return (
@@ -92,7 +93,9 @@ const ContentMain = () => {
               flexWrap: "wrap",
             }}
           >
-            <CustomButton>Comprar agora</CustomButton>
+            <CustomButton onClick={createCheckoutSession}>
+              Comprar agora
+            </CustomButton>
 
             <CustomButton version="outlined">Ver especificações</CustomButton>
           </Box>

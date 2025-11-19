@@ -53,12 +53,22 @@ const variants = {
 const CustomButton = ({
   version = "comprar",
   children,
+  onClick: handleClick,
   sx: sxFromProps,
   ...props
 }) => {
   const sx = { ...variants[version], ...(sxFromProps || {}) };
+
   return (
-    <Button sx={sx} {...props}>
+    <Button
+      sx={sx}
+      {...props}
+      onClick={() => {
+        if (typeof handleClick === "function") {
+          handleClick();
+        }
+      }}
+    >
       {children}
     </Button>
   );

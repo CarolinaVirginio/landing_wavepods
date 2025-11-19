@@ -1,7 +1,8 @@
-import { Box, Typography, Button, Container } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 import CustomButton from "./CustomButton";
+import createCheckoutSession from "../api/stripe";
 
-export default function BuySection() {
+function BuySection() {
   return (
     <Box component="section" sx={{ py: { xs: 8, md: 10 } }}>
       <Container
@@ -34,8 +35,10 @@ export default function BuySection() {
           Pronto para transformar sua experiência musical?
         </Typography>
 
-        <CustomButton>Comprar</CustomButton>
+        <CustomButton onClick={createCheckoutSession}>Comprar</CustomButton>
       </Container>
     </Box>
   );
 }
+
+export default BuySection;
