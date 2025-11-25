@@ -97,7 +97,9 @@ const ContentMain = () => {
               Comprar agora
             </CustomButton>
 
-            <CustomButton version="outlined">Ver especificações</CustomButton>
+            <CustomButton version="outlined" href="#features">
+              Ver especificações
+            </CustomButton>
           </Box>
         </Box>
       </Container>
