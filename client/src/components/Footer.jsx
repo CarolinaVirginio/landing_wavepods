@@ -43,15 +43,27 @@ const Footer = () => {
     return () => clearTimeout(timer);
   }, [status]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email) return;
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (emailRegex.test(email)) {
-      setStatus("sucesso");
-      setEmail("");
-    } else {
+    try {
+      const response = await fetch("http://localhost:4242/validate-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (data.valid) {
+        setStatus("sucesso");
+        setEmail("");
+      } else {
+        setStatus("erro");
+      }
+    } catch (error) {
+      console.error("Erro ao validar e-mail:", error);
       setStatus("erro");
     }
   };

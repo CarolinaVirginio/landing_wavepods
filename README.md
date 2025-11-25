@@ -123,7 +123,9 @@ Frontend: http://localhost:5173
 
 Backend: http://localhost:4242
 
-## Screenshots (click to enlarge)
+## Screenshots
+
+**(click to enlarge)**
 
 [![Main](./client/public/contentmain.jpeg)](./client/public/contentmain.jpeg)
 [![Features](./client/public/features.jpeg)](./client/public/features.jpeg)
