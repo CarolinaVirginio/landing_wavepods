@@ -58,7 +58,7 @@ function Success() {
           />
 
           <Typography variant="h4" fontWeight={600} gutterBottom>
-            Status do pagamento
+            Compra realizada com sucesso!
           </Typography>
 
           <Typography sx={{ mb: 3 }}>{status}</Typography>

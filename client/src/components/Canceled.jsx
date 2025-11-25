@@ -16,12 +16,12 @@ function Canceled() {
           <CancelIcon sx={{ fontSize: 70, color: "error.main", mb: 2 }} />
 
           <Typography variant="h4" fontWeight={600} gutterBottom>
-            Pagamento cancelado
+            Compra não finalizada
           </Typography>
 
           <Typography sx={{ mb: 3 }}>
-            O pagamento não foi concluído. Você pode tentar novamente quando
-            quiser.
+            A operação foi cancelada antes da confirmação. Nenhuma cobrança foi
+            realizada.
           </Typography>
 
           <Button
