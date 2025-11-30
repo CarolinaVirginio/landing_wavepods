@@ -26,7 +26,7 @@ function Success() {
 
       try {
         const res = await fetch(
-          `http://localhost:4242/checkout-session?session_id=${sessionId}`
+          `/api/checkout-session?session_id=${sessionId}`
         );
 
         if (!res.ok) {

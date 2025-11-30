@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Headphones } from "lucide-react";
 import CustomButton from "./CustomButton";
-import createCheckoutSession from "../api/stripe";
+import createCheckoutSession from "../api/checkout";
 
 const links = [
   { label: "Login", href: "/login" },

@@ -9,7 +9,7 @@ import emailRoutes from "./routes/emailRoutes.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config({ path: path.join(__dirname, ".env") });
+dotenv.config();
 
 const { STRIPE_SECRET_KEY, STRIPE_PRICE_ID, FRONTEND_URL, PORT } = process.env;
 
@@ -19,11 +19,9 @@ const stripe = STRIPE_SECRET_KEY ? new Stripe(STRIPE_SECRET_KEY) : null;
 app.use(cors({ origin: FRONTEND_URL || "http://localhost:5173" }));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("API online");
-});
+app.use("/api", emailRoutes);
 
-app.post("/create-checkout-session", async (req, res) => {
+app.post("/api/create-checkout-session", async (req, res) => {
   if (!stripe || !STRIPE_PRICE_ID) {
     return res.status(500).json({ error: "Stripe não configurado." });
   }
@@ -45,7 +43,7 @@ app.post("/create-checkout-session", async (req, res) => {
   }
 });
 
-app.get("/checkout-session", async (req, res) => {
+app.get("/api/checkout-session", async (req, res) => {
   if (!stripe) {
     return res.status(500).json({ error: "Stripe não configurado." });
   }
@@ -59,8 +57,6 @@ app.get("/checkout-session", async (req, res) => {
     res.status(404).json({ error: "Sessão não encontrada." });
   }
 });
-
-app.use("/", emailRoutes);
 
 const port = PORT || 4242;
 app.listen(port, () => {

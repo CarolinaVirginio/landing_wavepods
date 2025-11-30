@@ -8,7 +8,6 @@ import BuySection from "./components/BuySection";
 import Footer from "./components/Footer";
 import Success from "./components/Success";
 import Canceled from "./components/Canceled";
-import "./App.css";
 
 function Home() {
   return (

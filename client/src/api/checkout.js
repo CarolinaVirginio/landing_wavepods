@@ -1,6 +1,8 @@
+import { API_URL } from "../../config";
+
 async function createCheckoutSession(quantity = 1) {
   try {
-    const res = await fetch("http://localhost:4242/create-checkout-session", {
+    const res = await fetch(`${API_URL}/create-checkout-session`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ quantity }),

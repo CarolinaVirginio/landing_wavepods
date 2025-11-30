@@ -1,7 +1,7 @@
 import { Box, Typography, Button, Container } from "@mui/material";
 import waveBg from "../img/wavebg.jpg";
 import CustomButton from "./CustomButton";
-import createCheckoutSession from "../api/stripe";
+import createCheckoutSession from "../api/checkout";
 
 const ContentMain = () => {
   return (

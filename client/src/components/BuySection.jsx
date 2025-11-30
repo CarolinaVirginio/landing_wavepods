@@ -1,6 +1,6 @@
 import { Box, Typography, Container } from "@mui/material";
 import CustomButton from "./CustomButton";
-import createCheckoutSession from "../api/stripe";
+import createCheckoutSession from "../api/checkout";
 
 function BuySection() {
   return (

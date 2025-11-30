@@ -4,7 +4,7 @@ WavePods is an original frontend project, designed and implemented from scratch 
 
 - Built with React + Vite
 - Styled with Material UI
-- Includes a simple Stripe Checkout flow (backend in Node/Express)
+- Includes a simple Stripe Checkout flow (backend in Node + Express)
 - Fully responsive
 - No templates or copy-paste from courses — everything custom-made
 
@@ -20,22 +20,21 @@ This landing page demonstrates modern frontend practices with a clean structure 
 - Checkout button integrated with Stripe
 - Success and Cancel pages
 
-All components, layout decisions and animations were created by me.
-
 ## Project Structure
 
 ```
 landing_wavepods/
 │
-├── client/           # React + Vite frontend
-│   ├── public/       # Static assets (images, icons, screenshots)
-│   └── src/          # Components, pages, routing
+├── client/ # React + Vite frontend
+│   ├── public/ # Static assets (images, icons, screenshots)
+│   └── src/ # Components, pages, routing
 │
-├── server/           # Node.js + Express backend
-│   ├── index.js      # Server logic + Stripe integration
-│   └── .env          # Environment variables (not included in repo)
+├── server/ # Node.js + Express backend
+│   ├── index.js # Server logic + Stripe integration
+│   └── .env.production # Environment variables (not included in repo)
 │
-├── package.json      # Root scripts (concurrently)
+├── docker-compose.yml # Full project containerization
+├── package.json # Root scripts (concurrently)
 └── README.md
 ```
 
@@ -57,16 +56,49 @@ landing_wavepods/
 
 ## Environment Variables
 
-Create a .env file inside the server/ folder using the example below.
+Create a .env.production file inside the server/ folder using the example below.
 
 ```
 STRIPE_SECRET_KEY=
 STRIPE_PRICE_ID=
-FRONTEND_URL=http://localhost:5173
+FRONTEND_URL=http://localhost:8080
 PORT=4242
 ```
 
+These values are loaded automatically by Docker.
+
 ## How to Run the Project
+
+## ▶ Option 1 — Running with Docker (recommended)
+
+This project is fully dockerized. To start everything:
+
+```
+docker-compose up --build
+```
+
+This command:
+
+- Builds the frontend (React + Vite)
+- Builds the backend (Node + Express)
+- Starts Nginx serving the frontend
+- Proxies `/api/*` requests to the backend
+
+**URLs**
+
+- Frontend: http://localhost:8080
+- Backend (via proxy): http://localhost:8080/api
+- Backend direct access: http://localhost:4242
+
+### To stop the containers:
+
+**CTRL + C**
+
+```
+docker-compose down
+```
+
+## ▶ Option 2 — Running without Docker (dev mode)
 
 1. Clone the repository
 
@@ -102,9 +134,7 @@ FRONTEND_URL=http://localhost:5173
 PORT=4242
 ```
 
-4. Run everything with a single command
-
-Return to the project root:
+4. Run everything from the project root:
 
 ```
 cd ..

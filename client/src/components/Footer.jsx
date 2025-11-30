@@ -48,13 +48,13 @@ const Footer = () => {
     if (!email) return;
 
     try {
-      const response = await fetch("http://localhost:4242/validate-email", {
+      const res = await fetch("/api/validate-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
 
-      const data = await response.json();
+      const data = await res.json();
 
       if (data.valid) {
         setStatus("sucesso");
