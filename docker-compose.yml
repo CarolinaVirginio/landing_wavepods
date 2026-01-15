@@ -1,5 +1,5 @@
 services:
-  backend:
+  wavepods-backend:
     build: ./server
     container_name: wavepods-backend
     ports:
@@ -8,11 +8,11 @@ services:
       - ./server/.env.production
     restart: unless-stopped
 
-  frontend:
+  wavepods-frontend:
     build: ./client
     container_name: wavepods-frontend
     ports:
       - "8080:80"
     depends_on:
-      - backend
+      - wavepods-backend
     restart: unless-stopped
