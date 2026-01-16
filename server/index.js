@@ -84,5 +84,5 @@ app.get("/api/checkout-session", async (req, res) => {
 
 const port = PORT || 4242;
 app.listen(port, () => {
-  console.log(`🚀 Servidor rodando na porta ${port}`);
+  console.log(`Servidor rodando na porta ${port}`);
 });
