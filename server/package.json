@@ -5,12 +5,18 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "stripe": "^19.3.1"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.17",
+    "vitest": "^4.0.17"
   }
 }
