@@ -9,6 +9,8 @@ lerna-debug.log*
 
 # Dependencies
 node_modules
+coverage/
+server/coverage/
 
 # Build output
 dist
