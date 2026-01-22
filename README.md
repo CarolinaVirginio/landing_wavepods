@@ -16,6 +16,27 @@ WavePods is a professional-level project developed to practice modern fullstack 
 - Security: Dynamic CORS policy to support multiple environments (Dev/Prod).
 - Dockerized: Single-command setup for both frontend and backend.
 
+## Quality Assurance & Testing
+
+To ensure reliability and professional standards, the backend is covered by a comprehensive test suite using **Vitest** and **Supertest**:
+
+- **Unit Testing:** 100% coverage on core business logic, such as the custom email validation utility.
+- **Integration Testing:** Validation of API endpoints to ensure correct HTTP status codes (200, 422) and JSON responses.
+- **Stripe Mocking:** Implementation of advanced mocking techniques to simulate Stripe API responses, allowing safe and fast testing of checkout flows without external dependencies or additional costs.
+
+To run the tests, navigate to the server directory:
+
+```
+cd server
+npm test
+```
+
+To view the coverage report:
+
+```
+npm run coverage
+```
+
 ## Project Structure
 
 ```
@@ -28,6 +49,8 @@ landing_wavepods/
 │
 ├── server/                 # Node.js + Express backend
 │   ├── routes/             # Modular API routes
+│    ├── controllers/        # Request handlers
+│    ├── tests/              # Vitest & Supertest suite (Unit & Integration)
 │   ├── utils/              # Helper functions (validation, etc.)
 │   ├── index.js            # Main server entry point
 │   └── .env.production     # Production variables (git ignored)
@@ -49,6 +72,7 @@ landing_wavepods/
 
 - Node.js + Express
 - Stripe API / Stripe Node SDK
+- Vitest & Supertest (Testing)
 - dotenv
 - CORS
 
