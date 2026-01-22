@@ -1,49 +1,49 @@
-# WavePods — Landing Page Fullstack
+# WavePods — Fullstack Landing Page
 
-O WavePods é um projeto de nível profissional desenvolvido para praticar o desenvolvimento fullstack moderno. Ele apresenta uma interface customizada, um backend robusto em Node.js e um fluxo de pagamento seguro integrado ao Stripe.
+WavePods is a professional-level project developed to practice modern fullstack development. It features a fully customized interface, a robust Node.js backend, and a secure payment flow integrated with Stripe.
 
-- Frontend: Desenvolvido com React + Vite & Material UI.
-- Backend: Node + Express com arquitetura modular.
-- Infraestrutura: Totalmente conteinerizado com Docker & Nginx.
-- Pagamentos: Integração segura com Stripe Checkout.
-- Validação: Validação de e-mail customizada no lado do servidor e cabeçalhos de segurança.
+- Frontend: Built with React + Vite & Material UI.
+- Backend: Node.js + Express with modular architecture.
+- Infrastructure: Fully containerized using Docker & Nginx.
+- Payments: Secure integration with Stripe Checkout.
+- Validation: Custom email validation on the server side and security headers.
 
-## Funcionalidades
+## Features
 
-- Design Responsivo: Experiência fluida em dispositivos móveis, tablets e desktop.
-- Arquitetura Limpa: Separação de responsabilidades entre rotas, controladores e utilitários.
-- Validação de E-mail: Validação customizada baseada em Regex no backend para captura de leads.
-- Segurança: Política de CORS dinâmica para lidar com múltiplos ambientes (Dev/Prod).
-- Dockerizado: Configuração com um único comando para frontend e backend.
+- Responsive Design: Smooth experience across mobile, tablet, and desktop devices.
+- Clean Architecture: Clear separation of responsibilities between routes, controllers, and utilities.
+- Email Validation: Custom Regex-based validation in the backend for lead capture.
+- Security: Dynamic CORS policy to support multiple environments (Dev/Prod).
+- Dockerized: Single-command setup for both frontend and backend.
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 landing_wavepods/
-├── client/                 # Frontend React + Vite
+├── client/                 # React + Vite frontend
 │   ├── src/
-│   │   ├── api/            # Serviços de chamada de API
-│   │   └── components/     # Componentes de UI modulares
-│   └── nginx.conf          # Configuração do Nginx para produção
+│   │   ├── api/            # API service layer
+│   │   └── components/     # Modular UI components
+│   └── nginx.conf          # Nginx production configuration
 │
-├── server/                 # Backend Node.js + Express
-│   ├── routes/             # Rotas modulares da API
-│   ├── utils/              # Funções auxiliares (Validação, etc.)
-│   ├── index.js            # Ponto de entrada principal do servidor
-│   └── .env.production     # Variáveis de produção (ignorado pelo git)
+├── server/                 # Node.js + Express backend
+│   ├── routes/             # Modular API routes
+│   ├── utils/              # Helper functions (validation, etc.)
+│   ├── index.js            # Main server entry point
+│   └── .env.production     # Production variables (git ignored)
 │
-├── docker-compose.yml      # Orquestração de toda a stack
-└── package.json            # Scripts para rodar ambientes Dev/Prod
+├── docker-compose.yml      # Full stack orchestration
+└── package.json            # Scripts for Dev/Prod environments
 ```
 
-## Tecnologias
+## Technologies
 
 **Frontend**
 
 - React (Vite)
 - React Router DOM
 - Material UI
-- Framer Motion (opcional)
+- Framer Motion (optional)
 
 **Backend**
 
@@ -52,15 +52,17 @@ landing_wavepods/
 - dotenv
 - CORS
 
-**Infraestrutura (Ops)**
+**Infrastructure (Ops)**
 
-- Docker, Docker Compose, Nginx.
+- Docker
+- Docker Compose
+- Nginx
 
-## Variáveis de Ambiente
+## Environment Variables
 
-Para rodar este projeto, você precisará de um arquivo .env (para dev local) e um arquivo .env.production (para Docker).
+To run this project, you’ll need a .env file (local development) and a .env.production file (Docker).
 
-**Desenvolvimento Local (server/.env):**
+**Local Development (server/.env)**
 
 ```
 STRIPE_SECRET_KEY=sk_test_...
@@ -69,7 +71,7 @@ FRONTEND_URL=http://localhost:5173
 PORT=4242
 ```
 
-**Produção Docker (server/.env.production):**
+**Docker Production (server/.env.production)**
 
 ```
 STRIPE_SECRET_KEY=
@@ -78,41 +80,41 @@ FRONTEND_URL=http://localhost:8080
 PORT=4242
 ```
 
-## Como Rodar o Projeto
+## Running the Project
 
-## ▶ Opção 1 — Com Docker (Recomendado)
+### Option 1 — Docker (Recommended)
 
 ```
 docker-compose up --build
 ```
 
-Acesse a aplicação em: http://localhost:8080
+Access the application at: http://localhost:8080
 
-Este comando:
+This command:
 
-- Constrói o frontend (React + Vite)
-- Constrói o backend (Node + Express)
-- Inicia o Nginx servindo o frontend
-- Faz o Proxy das requisições /api/\* para o backend
+- Builds the frontend (React + Vite)
+- Builds the backend (Node + Express)
+- Starts Nginx serving the frontend
+- Proxies /api/\* requests to the backend
 
 **URLs**
 
 - Frontend: http://localhost:8080
 - Backend (via proxy): http://localhost:8080/api
-- Acesso direto ao Backend: http://localhost:4242
+- Direct backend access: http://localhost:4242
 
-Para parar os containers: CTRL + C ou docker-compose down
+To stop the containers: CTRL + C or docker-compose down
 
-## ▶ Opção 2 — Modo Dev Local
+## Option 2 — Local Dev Mode
 
-1. Clone esse repositório
+1. Clone the repository
 
 ```
 git clone https://github.com/CarolinaVirginio/landing_wavepods.git
 cd landing_wavepods
 ```
 
-2. Instale as dependências em ambas as pastas (npm install).
+2. Install dependencies in both folders.
 
 **Client**
 
@@ -128,9 +130,9 @@ cd server
 npm install
 ```
 
-3. Crie suas variáveis de ambiente:
+3. Create your environment variables:
 
-Dentro de /server , crie o arquivo .env:
+Inside /server, create a .env file:
 
 ```
 STRIPE_SECRET_KEY=
@@ -139,20 +141,20 @@ FRONTEND_URL=http://localhost:5173
 PORT=4242
 ```
 
-4. Rode a partir da raiz:
+4. Run from the root folder:
 
 ```
 cd ..
 npm run dev
 ```
 
-Acesse a aplicação em: http://localhost:5173
+Access the application at: http://localhost:5173
 
-Este comando:
+This command:
 
-- Inicia o backend com nodemon
-- Inicia o frontend com Vite
-- Mantém ambos rodando simultaneamente usando concurrently
+- Starts the backend using nodemon
+- Starts the frontend with Vite
+- Keeps both running simultaneously using concurrently
 
 **URLs:**
 
@@ -162,7 +164,7 @@ Backend: http://localhost:4242
 
 ## Screenshots
 
-**(Clique para ampliar)**
+**(Click to enlarge)**
 
 [![Main](./client/public/contentmain.jpeg)](./client/public/contentmain.jpeg)
 [![Features](./client/public/features.jpeg)](./client/public/features.jpeg)
@@ -171,12 +173,13 @@ Backend: http://localhost:4242
 [![Motivation3](./client/public/motivation3.jpeg)](./client/public/motivation3.jpeg)
 [![Buy](./client/public/buysection-footer.jpeg)](./client/public/buysection-footer.jpeg)
 
-## Autor
+## Author
 
 **Carolina Virginio**
 
-Desenvolvido como parte do meu portfólio frontend e processo de aprendizado fullstack.
+Developed as part of my frontend portfolio and fullstack learning journey.
 
-## Licença
+## License
 
-© 2025 Carolina Virginio. Todos os direitos reservados. Este projeto é proprietário e não pode ser copiado ou usado sem permissão.
+© 2025 Carolina Virginio. All rights reserved.
+This project is proprietary and may not be copied or used without permission.
