@@ -37,7 +37,7 @@ app.use(
       }
     },
     credentials: true,
-  })
+  }),
 );
 
 app.use(express.json());
@@ -74,7 +74,7 @@ app.get("/api/checkout-session", async (req, res) => {
     return res.status(500).json({ error: "Stripe não configurado." });
   try {
     const session = await stripe.checkout.sessions.retrieve(
-      req.query.session_id
+      req.query.session_id,
     );
     res.json(session);
   } catch {
@@ -83,6 +83,10 @@ app.get("/api/checkout-session", async (req, res) => {
 });
 
 const port = PORT || 4242;
-app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`);
-});
+if (process.env.NODE_ENV !== "test") {
+  app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`);
+  });
+}
+
+export { app };

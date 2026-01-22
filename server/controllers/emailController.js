@@ -13,5 +13,5 @@ export const validateEmailController = (req, res) => {
     return res.status(422).json({ valid: false, message: "Email inválido." });
   }
 
-  res.json({ valid: true, message: "Email válido." });
+  res.json({ valid: true, message: "Email válido!" });
 };
